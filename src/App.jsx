@@ -212,37 +212,27 @@
 
 
 
+
+
+
 import './App.css';
 import { useState, useEffect } from 'react';
 import 'bootstrap';
 import Update from './Update/Update';
 import Gener from './Gener/Gener';
 
+
 function App() {
   const category = [
-    {
-      id: "0",
-      category: "POPULAR",
-    },
-    {
-      id: "1",
-      category: "ACTION",
-    },
-    {
-      id: "2",
-      category: "COMEDY",
-    },
-    {
-      id: "3",
-      category: "ADVENTURES",
-    },
-    {
-      id: "4",
-      category: "HORROR",
-    },
+    { id: "0", category: "POPULAR" },
+    { id: "1", category: "ACTION" },
+    { id: "2", category: "COMEDY" },
+    { id: "3", category: "ADVENTURES" },
+    { id: "4", category: "HORROR" },
+    {id:"5", category:"ROMANTIC"},
   ];
 
-  const allMovies = [ 
+  const allMovies = [
     {
       images: "https://www.movieposters.com/cdn/shop/products/4c177c2b7f7bb9a679f089bcb50f844e_3e89eb5d-ffbd-4033-a00f-e595a3ef2e2a_240x360_crop_center.progressive.jpg?v=1573587540",
       name: "Dunkirk",
@@ -251,11 +241,11 @@ function App() {
       id: [0, 1],
     },
     {
-      images: "https://www.movieposters.com/cdn/shop/products/101855dc0989bad0324237731b9d8d9b_240x360_crop_center.progressive.jpg?v=1573594812",
-      name: "Top Gun",
-      category: "ADVENTURES", 
+      images: "https://www.movieposters.com/cdn/shop/products/jerrymaguire.flo.ar_240x360_crop_center.progressive.jpg?v=1597169327",
+      name: "Jerry Maguire",
+      category: "ROMANTIC", 
       year: 1972,
-      id: [3, 4],
+      id: [3, 5],
     },
     {
       images: "https://www.movieposters.com/cdn/shop/files/skyfall_c668003e_240x360_crop_center.progressive.jpg?v=1722011703",
@@ -289,42 +279,151 @@ function App() {
       images:"https://www.movieposters.com/cdn/shop/files/scan062_0c434b34-5d9e-4cff-a3ce-79d724ac3335_240x360_crop_center.progressive.jpg?v=1736368971",
       name:"Last Breath",
       category:"ADVENTURES",
-      year:2003,
+      year:1965,
       id:[3,1],
     },
     {
-      images:"https://www.movieposters.com/cdn/shop/files/captain-america-brave-new-world_2reaj42x_240x360_crop_center.progressive.jpg?v=1736260569",
-      name:"Captain America",
+      images:"https://www.movieposters.com/cdn/shop/products/c104f1bfed20481f35bc96cb9addc940_240x360_crop_center.progressive.jpg?v=1573588574",
+      name:"Titanic",
       category:"ACTION",
-      year:2003,
+      year:2009,
       id:[2,1],
     },
-    
-
+    {
+      images:"https://www.movieposters.com/cdn/shop/files/godzilla2_240x360_crop_center.progressive.jpg?v=1729789153",
+      name:"Gozilla",
+      category:"ADVENTURES",
+      year:2023,
+      id:[4,1],
+    },
+    {
+      images:"https://www.movieposters.com/cdn/shop/files/ROMAN-HOLIDAY_240x360_crop_center.progressive.jpg?v=1730233162",
+      name:"Roman Holiday",
+      category:"ACTION",
+      year:1999,
+      id:[2,1],
+    },
+    {
+      images:"https://www.movieposters.com/cdn/shop/products/a02f2674426d0953c7e2d0a21c4116fb_48dcfda4-e1c6-492c-8234-b047bf783188_240x360_crop_center.progressive.jpg?v=1573617287",
+      name:"The Notebook",
+      category:"ROMANTIC",
+      year:2021,
+      id:[0,5],
+    },
+    {
+      images:"https://www.movieposters.com/cdn/shop/files/the-end_myndexn0_240x360_crop_center.progressive.jpg?v=1733864478",
+      name:"The End",
+      category:"ACTION",
+      year:1921,
+      id:[3,1],
+    },
+    {
+      images:"https://www.movieposters.com/cdn/shop/files/28-years-later_h7dwenku_240x360_crop_center.progressive.jpg?v=1739372526",
+      name:"28 Years Later",
+      category:"ACTION",
+      year:1987,
+      id:[2,1],
+    },
+    {
+      images:"https://www.movieposters.com/cdn/shop/files/FIGHT-CLUB_240x360_crop_center.progressive.jpg?v=1730231824",
+      name:"Fight Club",
+      category:"ACTION",
+      year:2004,
+      id:[2,1],
+    },
+    {
+      images:"https://www.movieposters.com/cdn/shop/files/THE-WARRIORS_240x360_crop_center.progressive.jpg?v=1730234310",
+      name:"Warriors",
+      category:"ADVENTURES",
+      year:2019,
+      id:[3,1],
+    },
+    {
+      images:"https://www.movieposters.com/cdn/shop/files/working_man_240x360_crop_center.progressive.jpg?v=1738012373",
+      name:"Working Man",
+      category:"COMEDY",
+      year:1978,
+      id:[2,1],
+    },
+    {
+      images:"https://www.movieposters.com/cdn/shop/products/2caa8048128efd72cb9661247b781781_c36ea40f-048e-4ba8-8e89-516e307c37bc_240x360_crop_center.progressive.jpg?v=1573619050",
+      name:"Casablanca",
+      category:"ROMANTIC",
+      year:1943,
+      id:[5,0],
+    },
+    {
+      images:"https://www.movieposters.com/cdn/shop/products/724a561a5ec979e82787759776405d04_03a29a6d-1c0e-4d77-a953-9758e03899a8_240x360_crop_center.progressive.jpg?v=1573652480",
+      name:" Crazy Rich Asian",
+      category:"ROMANTIC",
+      year:2011,
+      id:[5,1],
+    },
+    {
+      images:"https://www.movieposters.com/cdn/shop/products/204f4eda33d6f32f11e2624a3f675871_afa6d0f1-503d-4e1a-abc3-15b4404592ae_240x360_crop_center.progressive.jpg?v=1573651243",
+      name:"Romeo and Juliet",
+      category:"Romantic",
+      year:2009,
+      id:[5,0],
+    },
+    {
+      images:"https://www.movieposters.com/cdn/shop/products/4940c5878babf3dc5d2ca567b7558178_9e62fc4c-4116-48e5-a4f5-3a99c73ae7b1_240x360_crop_center.progressive.jpg?v=1573651499",
+      name:"Jurassic Park",
+      category:"ADVENTURES",
+      year:1932,
+      id:[3,1],
+    },
+    {
+      images:"https://www.movieposters.com/cdn/shop/files/darkknight.building.24x36_20e90057-f673-4cc3-9ce7-7b0d3eeb7d83_240x360_crop_center.progressive.jpg?v=1707491191",
+      name:"The Dark Knight",
+      category:"ADVENTURES",
+      year:"20215",
+      id:[3,1],
+    },
     
   ];
 
-  const [filteredMovies, setFilteredMovies] = useState(allMovies); 
-  const [selectedCategory, setSelectedCategory] = useState("POPULAR"); 
+  const [filteredMovies, setFilteredMovies] = useState(allMovies);
+  const [selectedCategory, setSelectedCategory] = useState("POPULAR");
+  const [searchTerm, setSearchTerm] = useState(""); 
+
+  useEffect(() => {
+    
+    let categoryFilteredMovies = allMovies;
+    if (selectedCategory !== "POPULAR") {
+      categoryFilteredMovies = allMovies.filter(movie => movie.category === selectedCategory);
+    }
+
+    
+    if (searchTerm) {
+      const searchFilteredMovies = categoryFilteredMovies.filter(movie =>
+        movie.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredMovies(searchFilteredMovies);
+    } else {
+      setFilteredMovies(categoryFilteredMovies); 
+    }
+  }, [selectedCategory, searchTerm, allMovies]); 
+
 
   const handleCategoryClick = (categoryName) => {
     setSelectedCategory(categoryName);
-    if (categoryName === "POPULAR") {
-      setFilteredMovies(allMovies); 
-    } else {
-      const filtered = allMovies.filter(movie => movie.category === categoryName);
-      setFilteredMovies(filtered);
-    }
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
   };
 
   return (
     <>
-      <Update 
-        lists={category} 
-        onCategoryClick={handleCategoryClick} 
-        selectedCategory={selectedCategory} 
+      <Update
+        lists={category}
+        onCategoryClick={handleCategoryClick}
+        selectedCategory={selectedCategory}
+        searchTerm={searchTerm} 
+        onSearchChange={handleSearchChange} 
       />
-      <Gener movies={filteredMovies} /> 
+      <Gener movies={filteredMovies} />
     </>
   );
 }

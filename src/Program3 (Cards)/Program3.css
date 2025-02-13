@@ -1,0 +1,30 @@
+.program-img{
+    object-fit:cover;
+    height:290px;
+    width:300px;
+    object-position: center;
+    border-radius: 13px;
+    position:relative;
+    
+}
+.program-sub{
+    transition: opacity 0.3s ease-in-out;
+}
+.program-sub:hover{
+    transform: scale(1.1); 
+}
+.program3{
+    display: flex;
+    gap:27px;
+    margin-top: 100px;
+    justify-content: center;
+    margin-bottom:90px;
+}
+.program-subb{
+    position:absolute;
+   margin-top: -280px;
+    padding-left: 10px;
+    font-size:19.8px;
+    color:aliceblue;
+    
+}

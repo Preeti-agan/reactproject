@@ -1,0 +1,10 @@
+.img img{
+    width: 200px;
+    height:100px;
+    object-fit: cover;
+    object-position: top;
+}
+.main{
+    display: flex;
+    gap: 20px;
+}
